@@ -17,6 +17,7 @@ contract TokenMaster is ERC721 {
         string date;
         string time;
         string location;
+        string genre;
     }
 
     mapping(uint256 => Occasion) occasions;
@@ -42,7 +43,8 @@ contract TokenMaster is ERC721 {
         uint256 _maxTickets,
         string memory _date,
         string memory _time,
-        string memory _location
+        string memory _location,
+        string memory _genre
     ) public onlyOwner {
         totalOccasions++;
         occasions[totalOccasions] = Occasion(
@@ -53,7 +55,8 @@ contract TokenMaster is ERC721 {
             _maxTickets,
             _date,
             _time,
-            _location
+            _location,
+            _genre
         );
     }
 
